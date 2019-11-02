@@ -1,0 +1,15 @@
+version: '2'
+services:
+  ws_db_test:
+    build: .
+    ports:
+      - "8080:8080"
+
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: '4fgsdf32fewa321rfdserw32qf'
+    ports:
+      - "3306:3306"
+    volumes:
+      - ~/mysql_docker_volumes/ws_db_test:/var/lib/mysql
