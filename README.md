@@ -1,14 +1,16 @@
-# docker-tomcat-tutorial
-A basic tutorial on running a web app on Tomcat using Docker
+# Java webservice mysql example
+A basic example on using docker-compose to build a tomcat and a mysql docker so the webservice (on the tomcat docker) can store and load simple texts in a database.
 
 # Steps
 * Install [Docker](https://docs.docker.com/install/).
-* Clone this repository - $git clone https://github.com/softwareyoga/docker-tomcat-tutorial.git
-* cd 'docker-tomcat-tutorial'
-* $docker build -t mywebapp .
-* $docker run -d -p 80:8080 mywebapp
-* http://localhost
-* http://localhost/rest_test/rest/test/hello
+* Clone this repository -$ git clone https://github.com/tfassbender/java_ws_rest_mysql_example.git
+* cd java_ws_rest_mysql_example
+* docker-compose build
+* docker-compose up
+* http://localhost:8080
+* http://localhost:8080/WsDatabaseTest/db_test/db_test/hello (for a testing hello message)
+* http://localhost:8080/WsDatabaseTest/db_test/db_test/add_entry/any_text_you_want_to_enter (for adding an entry text to the database)
+* http://localhost:8080/WsDatabaseTest/db_test/db_test/get_entry/the_id_if_the_entry_you_want_to_read (for reading entries from the database)
 
 # Links
-[Sample Tomcat web app](https://tomcat.apache.org/tomcat-8.0-doc/appdev/sample/)
+For the java sourcecode (maven-project) see: [java_ws_rest_maven_project_example](https://github.com/tfassbender/java_ws_rest_mysql_maven_project_example)
