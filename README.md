@@ -1,5 +1,5 @@
-# Java webservice mysql example
-A basic example on using docker-compose to build a tomcat and a mysql docker so the webservice (on the tomcat docker) can store and load simple texts in a database.
+# Java NoteBookService - Docker
+A basic example on using docker-compose to build a tomcat and a mysql docker so the webservice (on the tomcat docker) can store notes
 
 # Steps
 * Install [Docker](https://docs.docker.com/install/).
@@ -14,3 +14,18 @@ A basic example on using docker-compose to build a tomcat and a mysql docker so 
 
 # Links
 For the java sourcecode (maven-project) see: [NoteBookService](https://github.com/tfassbender/NoteBookService)
+
+# Other usefull stuff
+
+### Inspecting the database
+
+To inspect the database (while the docker is running) run `docker exec -it notebook_service_docker_mysql_1 mysql -uroot -p` and enter the root password from `example__build_and_run.sh`
+
+### Tomcat logs
+
+Logs from the tomcat docker are placed in `./logs` (created as volume in docker-compose.ylm)
+
+### Bash on a running docker
+
+Run `docker -ps` to see the running docker containers.  
+Afterwards run `docker exec -it <the_name_of_the_container_you_want_to_enter> /bin/bash`

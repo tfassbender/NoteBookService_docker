@@ -4,15 +4,17 @@ services:
     build: .
     ports:
       - "${TOMCAT_EXTERNAL_PORT}:8080"
+    volumes:
+      - ./logs:/usr/local/tomcat/log
 
   mysql:
-    image: mysql:8
+    image: hypriot/rpi-mysql
     environment:
       MYSQL_ROOT_PASSWORD: '${MYSQL_DOCKER_ROOT_PASSWORD}'
       MYSQL_DATABASE: 'notebook'
       MYSQL_USER: 'notebook'
       MYSQL_PASSWORD: '${MYSQL_DOCKER_USER_PASSWORD}'
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - ~/mysql_docker_volumes/notebook:/var/lib/mysql
