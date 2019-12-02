@@ -27,5 +27,11 @@ Logs from the tomcat docker are placed in `./logs` (created as volume in docker-
 
 ### Bash on a running docker
 
-Run `docker -ps` to see the running docker containers.  
+Run `docker ps` to see the running docker containers.  
 Afterwards run `docker exec -it <the_name_of_the_container_you_want_to_enter> /bin/bash`
+
+### IOError: Can not read file in context: <path_to_docker_dir>/logs/notebook_service.log
+
+File is created by root. Just delete to fix the problem.
+
+
