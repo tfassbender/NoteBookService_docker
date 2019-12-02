@@ -32,6 +32,6 @@ Afterwards run `docker exec -it <the_name_of_the_container_you_want_to_enter> /b
 
 ### IOError: Can not read file in context: <path_to_docker_dir>/logs/notebook_service.log
 
-File is created by root. Just delete to fix the problem.
+File is created by root. Just change permissions to 777 or delete to fix the problem.
 
 
