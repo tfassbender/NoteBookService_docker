@@ -21,6 +21,11 @@ For the java sourcecode (maven-project) see: [NoteBookService](https://github.co
 
 To inspect the database (while the docker is running) run `docker exec -it notebook_service_docker_mysql_1 mysql -uroot -p` and enter the root password from `example__build_and_run.sh`
 
+Usefull commands on mysql commandline:
+* show databases;
+* use <database_name>;
+* show tables;
+
 ### Tomcat logs
 
 Logs from the tomcat docker are placed in `./logs` (created as volume in docker-compose.ylm)
